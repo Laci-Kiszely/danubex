@@ -11,9 +11,9 @@ import { Newsletter } from "@/components/landing/Newsletter";
 import { FinalCta } from "@/components/landing/FinalCta";
 import { Footer } from "@/components/landing/Footer";
 
-const TITLE = "DanubeX — Turn Austria and Hungary into one business opportunity";
+const TITLE = "DanubeX — Hungary as a low-risk growth and execution market";
 const DESCRIPTION =
-  "DanubeX helps companies build trusted commercial relationships across the Austria–Hungary corridor, reducing the cost, risk and management effort of cross-border execution.";
+  "DanubeX helps Austrian companies operate in Hungary with speed and confidence — reducing the cost, risk and management effort of cross-border growth. Business within the day.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

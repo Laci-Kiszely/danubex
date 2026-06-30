@@ -28,7 +28,7 @@ export function Opportunity() {
         <FadeIn>
           <SectionHeading
             eyebrow="The opportunity"
-            title="Where collaboration creates value"
+            title="Hungary: a low-risk growth and execution market"
           />
         </FadeIn>
         <div className="mt-16 grid gap-6 lg:grid-cols-5">
