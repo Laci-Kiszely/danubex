@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function FadeIn({
@@ -10,8 +10,9 @@ export function FadeIn({
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }) {
+
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
 
