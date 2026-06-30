@@ -64,20 +64,20 @@ export function Hero() {
         <FadeIn>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-danube" />
-            Austria ↔ Hungary execution platform
+            Hungary: low-risk growth and execution market
           </div>
         </FadeIn>
         <FadeIn delay={80}>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.02] tracking-tight text-foreground sm:text-7xl">
-            Turn Austria and Hungary into{" "}
-            <span className="text-danube">one business opportunity.</span>
+            Austria meets Hungary.{" "}
+            <span className="text-danube">Business within the day.</span>
           </h1>
         </FadeIn>
         <FadeIn delay={160}>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            We help companies build trusted commercial relationships across the
-            Austrian–Hungarian corridor — reducing the cost, risk and management effort of
-            working across the border.
+            Hungary is a low-risk growth and execution market for Austrian companies.
+            We remove the friction — so you can operate across the border with the speed
+            and confidence of working at home.
           </p>
         </FadeIn>
         <FadeIn delay={240}>
