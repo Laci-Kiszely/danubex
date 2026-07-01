@@ -3,13 +3,13 @@ import { FadeIn } from "@/components/shared/FadeIn";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const austrian = [
-  "Expand into Hungary",
-  "Find customers",
-  "Hire talent",
+  "Close customer base",
+  "First international customers",
+  "Base for international scaling",
+  "Under the radar experimenting",
   "Build partnerships",
-  "Validate new markets",
-  "Innovation collaboration",
-  "Operational scaling",
+  "Hire talent",
+  "Innovation collaborations",
 ];
 
 const hungarian = [
@@ -45,7 +45,7 @@ export function Opportunity() {
                 Austrian companies
               </h3>
               <p className="mt-3 text-muted-foreground">
-                The dominant use case: leveraging Hungary as a low-risk growth and execution market.
+                The dominant use case: look at Hungary as a low-risk growth and execution market. Your first non-German speaking opps!
               </p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {austrian.map((item) => (

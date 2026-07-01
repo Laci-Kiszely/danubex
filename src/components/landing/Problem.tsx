@@ -27,7 +27,7 @@ export function Problem() {
           <SectionHeading
             eyebrow="The friction"
             title={<>So close. <span className="text-muted-foreground">Yet still too far apart.</span></>}
-            description="We have deep shared history along the Danube. Geography, supply chains, talents, innovation, customers... joined activities made our companies stronger in multiple waves. Yet the latest decades ended up in friction. Time to restart!"
+            description="We have deep shared history along the Danube. Geography, supply chains, talents, innovation, customers... joined activities made our companies stronger in multiple waves. Yet the latest decades ended up in friction. Time to address those!"
           />
         </FadeIn>
         <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

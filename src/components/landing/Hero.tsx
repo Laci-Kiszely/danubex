@@ -64,13 +64,13 @@ export function Hero() {
         <FadeIn>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-danube" />
-            Hungary: low-risk growth and execution market
+            Let's revitalise cross-border business
           </div>
         </FadeIn>
         <FadeIn delay={80}>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.02] tracking-tight text-foreground sm:text-7xl">
             Austria meets Hungary.{" "}
-            <span className="text-danube">Business within the day.</span>
+            <span className="text-danube">Business opps within the day.</span>
           </h1>
         </FadeIn>
         <FadeIn delay={160}>
@@ -84,7 +84,7 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <BookCallButton size="lg" />
             <Button asChild variant="outline" size="lg">
-              <a href="#newsletter">Subscribe to the DanubeX Brief</a>
+              <a href="#newsletter">Subscribe to DanubeX infos</a>
             </Button>
           </div>
         </FadeIn>
