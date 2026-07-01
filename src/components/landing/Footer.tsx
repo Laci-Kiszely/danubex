@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col justify-between gap-4 border-t border-border/60 pt-8 text-xs text-muted-foreground sm:flex-row">
-          <div>© {new Date().getFullYear()} DanubeX. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} AbilityMatrix GmbH. All rights reserved.</div>
           <div>Austria ↔ Hungary</div>
         </div>
       </div>
