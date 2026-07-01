@@ -44,6 +44,7 @@ function Index() {
         <Opportunity />
         <WhyDanubeX />
         <ExecutionModel />
+        <SuccessfulCases />
         <OpportunityExplorer />
         <Newsletter />
         <FinalCta />
