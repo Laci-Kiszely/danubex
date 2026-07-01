@@ -3,6 +3,7 @@ import { z } from "zod";
 
 const inputSchema = z.object({
   email: z.string().trim().email().max(255),
+  type: z.enum(["subscribe", "unsubscribe"]).default("subscribe"),
 });
 
 export const subscribeToNewsletter = createServerFn({ method: "POST" })
@@ -15,11 +16,18 @@ export const subscribeToNewsletter = createServerFn({ method: "POST" })
     }
 
     const timestamp = new Date().toISOString();
-    const subject = `New DanubeX subscriber: ${data.email}`;
+    const isUnsub = data.type === "unsubscribe";
+    const subject = isUnsub
+      ? `DanubeX unsubscribe request: ${data.email}`
+      : `New DanubeX subscriber: ${data.email}`;
+    const heading = isUnsub
+      ? "DanubeX unsubscribe request"
+      : "New DanubeX newsletter subscriber";
     const html = `
       <div style="font-family: system-ui, sans-serif; line-height: 1.5;">
-        <h2>New DanubeX newsletter subscriber</h2>
+        <h2>${heading}</h2>
         <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Action:</strong> ${isUnsub ? "Unsubscribe" : "Subscribe"}</p>
         <p><strong>Timestamp:</strong> ${timestamp}</p>
       </div>
     `;
