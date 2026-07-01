@@ -6,6 +6,7 @@ import { Problem } from "@/components/landing/Problem";
 import { Opportunity } from "@/components/landing/Opportunity";
 import { WhyDanubeX } from "@/components/landing/WhyDanubeX";
 import { ExecutionModel } from "@/components/landing/ExecutionModel";
+import { SuccessfulCases } from "@/components/landing/SuccessfulCases";
 import { OpportunityExplorer } from "@/components/landing/OpportunityExplorer";
 import { Newsletter } from "@/components/landing/Newsletter";
 import { FinalCta } from "@/components/landing/FinalCta";
@@ -43,6 +44,7 @@ function Index() {
         <Opportunity />
         <WhyDanubeX />
         <ExecutionModel />
+        <SuccessfulCases />
         <OpportunityExplorer />
         <Newsletter />
         <FinalCta />
