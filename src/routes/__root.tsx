@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "DanubeX by AbilityMatrix" },
+      { name: "description", content: "DanubeX facilitates low-risk collaboration, turning Hungary into an easy international growth market for Austrian companies." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "DanubeX by AbilityMatrix" },
+      { property: "og:description", content: "DanubeX facilitates low-risk collaboration, turning Hungary into an easy international growth market for Austrian companies." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "DanubeX by AbilityMatrix" },
+      { name: "twitter:description", content: "DanubeX facilitates low-risk collaboration, turning Hungary into an easy international growth market for Austrian companies." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e379f0dc-0795-43c9-a3ee-3a3785c127cd/id-preview-761a9740--3cb0cc6b-39e7-4833-bb4b-9d6ebda7db08.lovable.app-1782903450548.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e379f0dc-0795-43c9-a3ee-3a3785c127cd/id-preview-761a9740--3cb0cc6b-39e7-4833-bb4b-9d6ebda7db08.lovable.app-1782903450548.png" },
     ],
     links: [
       {
