@@ -1,9 +1,11 @@
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { emailSchema, submitEmail } from "@/lib/newsletter";
+import { emailSchema } from "@/lib/newsletter";
+import { subscribeToNewsletter } from "@/lib/newsletter.functions";
 
 export function NewsletterForm({
   className,
@@ -16,6 +18,7 @@ export function NewsletterForm({
 }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const subscribe = useServerFn(subscribeToNewsletter);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -26,7 +29,7 @@ export function NewsletterForm({
     }
     setLoading(true);
     try {
-      await submitEmail(parsed.data);
+      await subscribe({ data: { email: parsed.data } });
       toast.success("You’re on the list. Talk soon.");
       setEmail("");
     } catch {
