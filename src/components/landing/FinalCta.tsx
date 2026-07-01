@@ -29,7 +29,7 @@ export function FinalCta() {
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <BookCallButton size="lg" label="Book a 30-minute Introduction Call" />
             <Button asChild variant="outline" size="lg">
-              <a href="#newsletter">Subscribe to the DanubeX Brief</a>
+              <a href="#newsletter">Subscribe to DanubeX infos</a>
             </Button>
           </div>
         </FadeIn>
