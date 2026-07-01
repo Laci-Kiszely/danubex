@@ -1,42 +1,31 @@
-## Successful Cases carousel
+## Goal
+When someone submits the DanubeX newsletter form, send an email to `kiszely@abilitymatrix.com` with their address. No database, no confirmation email to the subscriber (yet).
 
-### Placement
-New section inserted in `src/routes/index.tsx` between `<ExecutionModel />` and `<OpportunityExplorer />`.
+## Approach
+Reuse the same pattern as your `bizdevbuddy` project: direct Resend API call from the server, using a `RESEND_API_KEY` secret and your verified `kiszely.app` domain as sender.
 
-### New component
-`src/components/landing/SuccessfulCases.tsx`
-- `SectionHeading` — eyebrow "Proof", title "Successful cases", short description line.
-- Auto-scrolling horizontal ticker of case cards:
-  - Two duplicated rows of the same cards inside a flex track, animated with a CSS `@keyframes marquee` (translateX 0 → -50%), infinite, ~40s linear.
-  - Pauses on hover (`group-hover:[animation-play-state:paused]`).
-  - Edge fade masks left/right using `mask-image` linear-gradient so cards fade in/out of view.
-  - Respects `prefers-reduced-motion` (animation disabled → static horizontal scroll with `overflow-x-auto snap-x`).
-- Card design (matches existing DanubeX style — bordered, rounded-2xl, muted surface, Instrument Serif for the outcome line, danube accent for direction badge):
-  - Direction badge: `AT → HU` / `HU → AT`
-  - Sector (small caps, muted)
-  - Company / anonymised label (e.g. "Austrian industrial SME")
-  - Challenge (1 line, muted)
-  - Result (1 line, foreground, serif)
+## Steps
 
-### Data
-`src/lib/cases.ts` exports `CASES: Case[]` with a typed shape:
-```ts
-export type Case = {
-  direction: "AT→HU" | "HU→AT";
-  sector: string;
-  company: string;
-  challenge: string;
-  result: string;
-};
-```
-Seeded with 4 placeholder cases the user can edit. (Please share the real cases whenever ready — company/anonymised name, sector, 1-line challenge, 1-line result — and I'll swap them in.)
+1. **Secret**
+   - Add `RESEND_API_KEY` (I'll prompt for it — reuse the same key from bizdevbuddy or create a new one at resend.com/api-keys).
 
-### Styles
-Add to `src/styles.css`:
-- `@keyframes marquee { to { transform: translateX(-50%); } }`
-- `.animate-marquee { animation: marquee 40s linear infinite; }`
-- `@media (prefers-reduced-motion: reduce) { .animate-marquee { animation: none; } }`
+2. **Server function** — `src/lib/newsletter.functions.ts`
+   - `subscribeToNewsletter({ email })` using `createServerFn`
+   - Zod validation
+   - POST to `https://api.resend.com/emails`:
+     - `from`: `DanubeX <noreply@kiszely.app>`
+     - `to`: `kiszely@abilitymatrix.com`
+     - `reply_to`: subscriber's email (so you can reply directly)
+     - `subject`: `New DanubeX subscriber: <email>`
+     - Body: email + timestamp + user-agent
+   - Returns `{ success: true }`; on failure, surfaces a generic error and logs details server-side.
 
-### Out of scope
-- No backend, no CMS — cases live in the TS file.
-- No images/logos in v1 (can be added later by extending the `Case` type).
+3. **Wire the form** — `src/lib/newsletter.ts`
+   - Replace the current stub with a call to the new server function via `useServerFn` in `NewsletterForm.tsx` (or keep the `submitNewsletter` helper and have it invoke the server fn).
+
+## Notes
+- No DB table for now; if you later want a subscriber list, we can add a Cloud table and insert alongside the email send.
+- No changes to UI copy or layout.
+- Nothing else in the app is touched.
+
+Confirm and I'll implement.
