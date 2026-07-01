@@ -13,6 +13,9 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               Building trusted business between Austria and Hungary.
             </p>
+            <p className="mt-1 max-w-sm text-sm text-muted-foreground">
+              An AbilityMatrix initiative.
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
             <div>
