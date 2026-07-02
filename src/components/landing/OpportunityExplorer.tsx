@@ -100,7 +100,7 @@ export function OpportunityExplorer() {
                 </>
               ) : (
                 <p className="text-muted-foreground">
-                  Pick a direction and at least one focus area to see a starting hypothesis.
+                  Pick a direction and a focus area to see a starting hypothesis.
                 </p>
               )}
             </div>
