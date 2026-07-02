@@ -47,9 +47,19 @@ export function getInsight(direction: Direction | null, job: Job | null): string
 
   if (direction === "hu-at") {
     if (job === "customers")
-      return "Austrian enterprise buyers move on credibility signals. The fastest path in is a warm relationship, not a cold pitch.";
+      return "An often desired yet challenging path. Glad to help you in starting or scaling your journey.";
+    if (job === "partners")
+      return "Similarly to customer acquisition in Austria, partnerships require long term and local commitments. Happy to share experiences and resources.";
+    if (job === "talent")
+      return "Building in Austria most often requires local presence - fortunately there are many networks to tap into a hungry, and even international talent pool.";
+    if (job === "innovation")
+      return "Austria has many interesting solutions and events remaining invisible in the CEE region. Our ambition is to change that into meaningful collaborations!";
+    if (job === "manufacturing")
+      return null;
     if (job === "investment")
-      return "Austrian capital is conservative but loyal — the work happens before the pitch, not in the deck.";
+      return "Whether (startup) investment opportunities, incorporation or fundraises, can help with first-hand experiences.";
+    if (job === "operations")
+      return "Experienced in setting-up businesses as well as establishing a supportive ecosystem in Austria. Anything you are curious about?";
     return "Entering Austria is less about the product and more about earning a seat in conversations that already exist.";
   }
 
