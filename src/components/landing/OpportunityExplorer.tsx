@@ -60,12 +60,12 @@ export function OpportunityExplorer() {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {JOBS.map((j) => {
-                const active = jobs.includes(j.id);
+                const active = selectedJob === j.id;
                 return (
                   <button
                     key={j.id}
                     type="button"
-                    onClick={() => toggleJob(j.id)}
+                    onClick={() => selectJob(j.id)}
                     aria-pressed={active}
                     className={cn(
                       "rounded-full border px-4 py-2 text-sm transition-colors",
