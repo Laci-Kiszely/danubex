@@ -6,7 +6,6 @@ export type Job =
   | "innovation"
   | "manufacturing"
   | "investment"
-  | "technology"
   | "operations";
 
 export const JOBS: { id: Job; label: string }[] = [
@@ -16,7 +15,6 @@ export const JOBS: { id: Job; label: string }[] = [
   { id: "innovation", label: "Innovation" },
   { id: "manufacturing", label: "Manufacturing" },
   { id: "investment", label: "Investment" },
-  { id: "technology", label: "Technology" },
   { id: "operations", label: "Operations" },
 ];
 
@@ -31,13 +29,19 @@ export function getInsight(direction: Direction | null, jobs: Job[]): string | n
 
   if (direction === "at-hu") {
     if (jobs.includes("talent"))
-      return "Hungary’s engineering and operational talent is closer than you think — but hiring without a local execution partner is where most attempts stall.";
+      return "There are many ways to leverage Hungary's labor cost advantage, whether considering temporary resource needs or longer term commitments.";
     if (jobs.includes("customers"))
-      return "Your first ten Hungarian customers won’t come from a market report. They come from being introduced by someone the buyer already trusts.";
-    if (jobs.includes("manufacturing") || jobs.includes("operations"))
-      return "The biggest hidden cost isn’t setup — it’s the management bandwidth needed to keep an operation running across the border.";
+      return "Are you an established or early stage business? Hungary's economy is often under the radar from abroad, thus many domains underserved whether corporates or more innovative sectors.";
+    if (jobs.includes("innovation"))
+      return "Hungarian innovators' typical challenge is the lack of business side - maybe the right sourcing adventure for you?";
+    if (jobs.includes("manufacturing"))
+      return "An emerging sector also in the innovative world: proximity & cost level justifies differentiated production.";
+    if (jobs.includes("operations"))
+      return "Already beyond the idea phase, looking into operating? Let's test our network and practical access.";
     if (jobs.includes("partners"))
-      return "Finding partners is rarely the blocker. Validating that they can actually execute is.";
+      return "Despite their proximity, partner- and reseller networks tend to be less proactive internationally, appreciating relevant offers. Let's figure it out together!";
+    if (jobs.includes("investment"))
+      return "Hungary has been underinvested during the last decades - glad to connect you with angels, specialists, interesting companies.";
     return "Based on your selection, the biggest opportunity may not be market entry — it may be finding the right execution partner.";
   }
 
