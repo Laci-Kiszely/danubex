@@ -70,7 +70,7 @@ export function Hero() {
         <FadeIn delay={80}>
           <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.02] tracking-tight text-foreground sm:text-7xl">
             Austria meets Hungary.{" "}
-            <span className="text-danube">Business opps within the day.</span>
+            <span className="text-danube">Business opps just hours away.</span>
           </h1>
         </FadeIn>
         <FadeIn delay={160}>

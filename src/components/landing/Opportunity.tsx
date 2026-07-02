@@ -45,7 +45,7 @@ export function Opportunity() {
                 Austrian companies
               </h3>
               <p className="mt-3 text-muted-foreground">
-                The dominant use case: look at Hungary as a low-risk growth and execution market. Your first non-German speaking opps!
+                The dominant use case: look at Hungary as a low-risk growth and execution market. Your first expansion beyond the German-speaking market!
               </p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {austrian.map((item) => (
