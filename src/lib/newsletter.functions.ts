@@ -40,7 +40,7 @@ export const subscribeToNewsletter = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         from: "DanubeX <noreply@kiszely.app>",
-        to: ["kiszely@abilitymatrix.com"],
+        to: ["laci@danubex.kiszely.app"],
         reply_to: data.email,
         subject,
         html,
