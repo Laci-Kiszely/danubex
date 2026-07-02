@@ -13,12 +13,12 @@ import {
 
 export function OpportunityExplorer() {
   const [direction, setDirection] = useState<Direction | null>("at-hu");
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-  const insight = useMemo(() => getInsight(direction, jobs), [direction, jobs]);
+  const insight = useMemo(() => getInsight(direction, selectedJob), [direction, selectedJob]);
 
-  function toggleJob(j: Job) {
-    setJobs((prev) => (prev.includes(j) ? prev.filter((x) => x !== j) : [...prev, j]));
+  function selectJob(j: Job) {
+    setSelectedJob((prev) => (prev === j ? null : j));
   }
 
   return (
