@@ -13,12 +13,12 @@ import {
 
 export function OpportunityExplorer() {
   const [direction, setDirection] = useState<Direction | null>("at-hu");
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
-  const insight = useMemo(() => getInsight(direction, jobs), [direction, jobs]);
+  const insight = useMemo(() => getInsight(direction, selectedJob), [direction, selectedJob]);
 
-  function toggleJob(j: Job) {
-    setJobs((prev) => (prev.includes(j) ? prev.filter((x) => x !== j) : [...prev, j]));
+  function selectJob(j: Job) {
+    setSelectedJob((prev) => (prev === j ? null : j));
   }
 
   return (
@@ -60,12 +60,12 @@ export function OpportunityExplorer() {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {JOBS.map((j) => {
-                const active = jobs.includes(j.id);
+                const active = selectedJob === j.id;
                 return (
                   <button
                     key={j.id}
                     type="button"
-                    onClick={() => toggleJob(j.id)}
+                    onClick={() => selectJob(j.id)}
                     aria-pressed={active}
                     className={cn(
                       "rounded-full border px-4 py-2 text-sm transition-colors",
@@ -100,7 +100,7 @@ export function OpportunityExplorer() {
                 </>
               ) : (
                 <p className="text-muted-foreground">
-                  Pick a direction and at least one focus area to see a starting hypothesis.
+                  Pick a direction and a focus area to see a starting hypothesis.
                 </p>
               )}
             </div>
