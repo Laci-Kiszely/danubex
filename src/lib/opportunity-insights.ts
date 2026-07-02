@@ -63,5 +63,5 @@ export function getInsight(direction: Direction | null, job: Job | null): string
     return "Entering Austria is less about the product and more about earning a seat in conversations that already exist.";
   }
 
-  return "Two-way collaboration usually outperforms one-way expansion — the leverage compounds when value flows in both directions.";
+  return "The ideal storm! Two-way collaboration outperforms one-way expansion, keeping all parties motivated. Let's find likeminded counterparts to grow Europe!";
 }
