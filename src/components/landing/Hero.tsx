@@ -64,7 +64,7 @@ export function Hero() {
         <FadeIn>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1 text-xs text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-danube" />
-            Let's revitalise cross-border business
+            Your easiest international market
           </div>
         </FadeIn>
         <FadeIn delay={80}>
