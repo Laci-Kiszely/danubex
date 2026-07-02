@@ -24,31 +24,31 @@ export const DIRECTIONS: { id: Direction; label: string }[] = [
   { id: "both", label: "Both" },
 ];
 
-export function getInsight(direction: Direction | null, jobs: Job[]): string | null {
-  if (!direction || jobs.length === 0) return null;
+export function getInsight(direction: Direction | null, job: Job | null): string | null {
+  if (!direction || !job) return null;
 
   if (direction === "at-hu") {
-    if (jobs.includes("talent"))
+    if (job === "talent")
       return "There are many ways to leverage Hungary's labor cost advantage, whether considering temporary resource needs or longer term commitments.";
-    if (jobs.includes("customers"))
+    if (job === "customers")
       return "Are you an established or early stage business? Hungary's economy is often under the radar from abroad, thus many domains underserved whether corporates or more innovative sectors.";
-    if (jobs.includes("innovation"))
+    if (job === "innovation")
       return "Hungarian innovators' typical challenge is the lack of business side - maybe the right sourcing adventure for you?";
-    if (jobs.includes("manufacturing"))
+    if (job === "manufacturing")
       return "An emerging sector also in the innovative world: proximity & cost level justifies differentiated production.";
-    if (jobs.includes("operations"))
+    if (job === "operations")
       return "Already beyond the idea phase, looking into operating? Let's test our network and practical access.";
-    if (jobs.includes("partners"))
+    if (job === "partners")
       return "Despite their proximity, partner- and reseller networks tend to be less proactive internationally, appreciating relevant offers. Let's figure it out together!";
-    if (jobs.includes("investment"))
+    if (job === "investment")
       return "Hungary has been underinvested during the last decades - glad to connect you with angels, specialists, interesting companies.";
     return "Based on your selection, the biggest opportunity may not be market entry — it may be finding the right execution partner.";
   }
 
   if (direction === "hu-at") {
-    if (jobs.includes("customers"))
+    if (job === "customers")
       return "Austrian enterprise buyers move on credibility signals. The fastest path in is a warm relationship, not a cold pitch.";
-    if (jobs.includes("investment"))
+    if (job === "investment")
       return "Austrian capital is conservative but loyal — the work happens before the pitch, not in the deck.";
     return "Entering Austria is less about the product and more about earning a seat in conversations that already exist.";
   }
